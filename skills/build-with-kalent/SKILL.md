@@ -13,7 +13,7 @@ Base URL: `https://app.kalent.ai`. Call the paths under `/api/v1`.
 
 Read the API key from the environment variable `KALENT_API_KEY` and send it as the header `x-api-key`. Never take the key from the chat. Never commit it.
 
-The same workspace API key has two balances: search spends API credits and does not need a Kalent subscription, and enrichment spends contact credits and still needs an active or trialing subscription.
+The same workspace API key has two balances: search spends API credits, and contact enrichment spends contact credits. Neither search nor LinkedIn contact lookup (`POST /api/v1/contact/enrich`) needs a Kalent subscription: only the balance is checked. Candidate contact enrichment (`POST /api/v1/candidates/{candidateId}/enrich-contacts`) still needs an active or trialing subscription. See https://docs.kalent.ai/credits.
 
 Docs are canonical. Link them. Do not paste request or response schemas from memory.
 
